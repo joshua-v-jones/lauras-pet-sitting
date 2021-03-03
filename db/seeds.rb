@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+	providedServices = ProvidedService.create([{service: 'Cleaning', price: 15.00, timeNeeded: 20}, {service: 'Feeding', price: 8.00, timeNeeded: 10}])
+	animals = Animal.create({Type: 'Dog', provided_service_id: 1})

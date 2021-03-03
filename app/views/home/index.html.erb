@@ -5,6 +5,13 @@
   </head>
 
   <body>
-	<b1>It's not much, but it's a start</b1>
-  </body>
-</html>
+	<ul>
+	  <% @animals.each do |animal| %>
+	    <li>
+	        <%= animal.Type %>
+	    </li>
+   	    <li>
+	        <%= @providedServices[animal.provided_service_id].service %>
+	    </li>
+	  <% end %>
+</html> 
