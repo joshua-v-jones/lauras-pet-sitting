@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_180409) do
+ActiveRecord::Schema.define(version: 2021_03_03_181302) do
 
   create_table "animals", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "Type"
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 2021_03_03_180409) do
 
   create_table "provided_services", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "service"
-    t.decimal "price", precision: 10
     t.integer "timeNeeded"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "price", precision: 5, scale: 2
   end
 
   add_foreign_key "animals", "provided_services"
