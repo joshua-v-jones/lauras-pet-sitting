@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_03_08_104820) do
 
   create_table "animals", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "Type"
+    t.string "breed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
