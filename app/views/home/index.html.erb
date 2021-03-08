@@ -7,11 +7,14 @@
   <body>
 	<ul>
 	  <% @animals.each do |animal| %>
+	  	<a href="/animals/<%=animal.id %>">
+			 <%= animal.Type %>
+	  	</a>
 	    <li>
-	        <%= animal.Type %>
+
 	    </li>
    	    <li>
-	        <%= @providedServices[animal.provided_service_id].service %>
+	        <%= @providedServices[animal.id].service %>
 	    </li>
 	  <% end %>
 </html> 

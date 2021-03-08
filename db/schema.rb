@@ -10,23 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_180409) do
+ActiveRecord::Schema.define(version: 2021_03_08_104820) do
 
   create_table "animals", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "Type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "provided_service_id", null: false
-    t.index ["provided_service_id"], name: "index_animals_on_provided_service_id"
   end
 
-  create_table "provided_services", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "service"
-    t.decimal "price", precision: 5, scale: 2
-    t.integer "timeNeeded"
+  create_table "animals_services", id: false, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "animal_id", null: false
+    t.bigint "service_id", null: false
+    t.index ["animal_id"], name: "index_animals_services_on_animal_id"
+    t.index ["service_id"], name: "index_animals_services_on_service_id"
+  end
+
+  create_table "prices", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.decimal "amount", precision: 4, scale: 2
+    t.integer "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "animals", "provided_services"
+  create_table "services", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
 end
