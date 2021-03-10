@@ -29,17 +29,22 @@
                         
                         <div id = "navbarmenu" class = "navbar-menu">
                            <div class = "navbar-start">
-                           	<div class="navbar-item has-dropdown is-hoverable">
-                         		<a class="navbar-link">
-          							Services
-        						</a>
-        						<div class = "navbar-dropdown">
-        						  <% @animals.each do |animal|  %>
-   						  		  	<a class = "navbar-item has-text-black"><%= animal.breed %></a>
-        						  <% end %>
-        						</div>
-                           	</div>
-
+	                           	<div class="navbar-item has-dropdown is-hoverable">
+	                         		<a class="navbar-link">
+	          							Services
+	        						</a>
+	        						<div class = "navbar-dropdown">
+	        						  <% @animals.each do |animal|  %>
+	        						  		<%= link_to animal.breed, animal, class: "navbar-item has-text-black" %>
+	        						  <% end %>
+	        						</div>
+	                           	</div>
+	                           	<div class="navbar-item">
+	                           		About me  
+	                           	</div>
+                 		        <div class="navbar-item">
+	                           		Tarifs
+	                           	</div>
                            </div>
                         </div>
                         
