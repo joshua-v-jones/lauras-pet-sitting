@@ -5,9 +5,13 @@
 #animals
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+	Animal.delete_all
+	Service.delete_all
+
 	animals = Animal.create([{breed: 'Dog'},{breed: 'Cat'},{breed: 'NAC'}])
 	services = Service.create([
 		{title: 'Cleaning', description: "Full description here:"}, 
 		{title: 'Feeding', description: "Full description here:"},
 		{title: 'Walking', description: "Full description here:"}])
    
+	animals[0].services = services
