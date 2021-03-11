@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="has-navbar-fixed-top">
   <head>
     <title>Laura's Pet Services</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -16,10 +16,10 @@
       <section class = "section">
          <div class = "container">
 
-            <section class = "hero is-primary is-medium">
+            <section class = "hero is-primary is-fullheight">
                <!-- Hero head at the top -->
-               <div class = "hero-head">
-                  <nav class = "navbar is-dark">
+               <div class = "hero-head is-link">
+                  <nav class = "navbar is-light is-fixed-top has-text-black">
                      <div class = "container">
                         <div class = "navbar-brand">
                            <a class = "navbar-item">
@@ -35,7 +35,7 @@
 	        						</a>
 	        						<div class = "navbar-dropdown">
 	        						  <% @animals.each do |animal|  %>
-	        						  		<%= link_to animal.breed, animal, class: "navbar-item has-text-black" %>
+	        						  		<%= link_to animal.breed, services_url(:animal_id => animal.id), class: "navbar-item has-text-black" %>
 	        						  <% end %>
 	        						</div>
 	                           	</div>
