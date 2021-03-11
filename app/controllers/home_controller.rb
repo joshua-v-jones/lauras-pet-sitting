@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
 	def index
-		@animals = Animal.all
+		@animals = Animal.includes(:services)
 	end
 end

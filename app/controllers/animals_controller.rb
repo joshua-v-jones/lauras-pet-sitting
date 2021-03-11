@@ -1,12 +1,13 @@
 class AnimalsController < ApplicationController
 	def index
-		@Animals = Animal.all
+		@animals = Animal.all
 	end
 	def show
-		@Animal = Animal.find(params[:id])
+		@animals = Animal.all
+		@animal = Animal.find(params[:id])
 	end
 	def create
-		@Animal = Animal.new
+		@animal = Animal.new
 	end 
 	def
 	def edit

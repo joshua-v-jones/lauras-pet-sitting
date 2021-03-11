@@ -1,6 +1,8 @@
 class ServicesController < ApplicationController
 	def index
-		@Services = Service.all
+		@animals = Animal.includes(:services)
+		@animal = Animal.find(params[:animal_id])
+		@services = @animal.services
 	end
 	def show
 		@Service = 	Service.find(params[:id])
